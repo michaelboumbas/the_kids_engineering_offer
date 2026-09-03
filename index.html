@@ -341,6 +341,23 @@
     font-weight: 500;
   }
 
+  .asterisk {
+    color: var(--terra);
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    margin-left: 2px;
+  }
+
+  .asterisk-note {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    line-height: 1.6;
+  }
+
   /* MAINTENANCE INCLUDED LIST */
   .included-list {
     list-style: none;
@@ -759,13 +776,13 @@
     <span class="section-number">— 05</span>
     <h2>Επένδυση</h2>
     <p>
-      Δύο κομμάτια: εφάπαξ κόστος για την κατασκευή, και μηνιαία συνδρομή για τη συντήρηση μετά την παράδοση.
+      Δύο κομμάτια: εφάπαξ κόστος για την κατασκευή, και ετήσια συνδρομή για τη συντήρηση μετά την παράδοση.
     </p>
 
     <div class="investment-card">
       <div class="investment-header">
         <div>
-          <div class="investment-title">Κατασκευή Website & Brand</div>
+          <div class="investment-title">Κατασκευή Website & Brand<span class="asterisk">*</span></div>
           <p class="investment-desc" style="margin: 4px 0 0;">Εφάπαξ κόστος για όλα τα deliverables παραπάνω</p>
         </div>
         <div style="text-align: right;">
@@ -789,17 +806,21 @@
           <div class="installment-amount">600€</div>
         </div>
       </div>
+
+      <p class="asterisk-note">
+        <span class="asterisk">*</span> Ο τρόπος πληρωμής (τραπεζική κατάθεση, Revolut, Wise) και το αν χρειάζεται έκδοση τιμολογίου θα συζητηθούν πριν την υπογραφή, ώστε να δικαιολογηθεί σωστά η μεταφορά των χρημάτων από Ελβετία.
+      </p>
     </div>
 
     <div class="investment-card">
       <div class="investment-header">
         <div>
           <div class="investment-title">Συντήρηση & Υποστήριξη</div>
-          <p class="investment-desc" style="margin: 4px 0 0;">Μηνιαία συνδρομή, ξεκινά με το go-live</p>
+          <p class="investment-desc" style="margin: 4px 0 0;">Ετήσια συνδρομή, ξεκινά με το go-live του site</p>
         </div>
         <div style="text-align: right;">
-          <span class="investment-price">15€<span style="font-size: 0.9rem; font-weight: 400; color: var(--ink-soft);">/μήνα</span></span>
-          <span class="investment-price-chf">≈ 14 CHF/μήνα</span>
+          <span class="investment-price">180€<span style="font-size: 0.9rem; font-weight: 400; color: var(--ink-soft);">/χρόνο</span></span>
+          <span class="investment-price-chf">≈ 169 CHF/χρόνο · ισοδύναμο με 15€/μήνα</span>
         </div>
       </div>
 
@@ -807,12 +828,12 @@
         <li>Lovable hosting & database</li>
         <li>GitHub backup — για να μη χαθεί ποτέ τίποτα</li>
         <li>Security updates & bug fixes</li>
-        <li>1 ώρα support / μήνα για μικρές αλλαγές ή απορίες</li>
+        <li>12 ώρες support / χρόνο για μικρές αλλαγές ή απορίες (ισοδύναμο 1 ώρα/μήνα)</li>
         <li>Έξτρα ώρες αν χρειαστούν: 30€ / ώρα</li>
       </ul>
 
       <p style="margin-top: 20px; font-size: 0.9rem; color: var(--ink-soft); font-style: italic;">
-        Ελάχιστη δέσμευση: 12 μήνες. Domain, email account και Mapbox subscription παραμένουν στο δικό σου όνομα και τα πληρώνεις εσύ απευθείας στους παρόχους.
+        Η συνδρομή καταβάλλεται εφάπαξ κατά το go-live και ανανεώνεται κάθε 12 μήνες. Domain, email account και Mapbox subscription παραμένουν στο δικό σου όνομα και τα πληρώνεις εσύ απευθείας στους παρόχους.
       </p>
     </div>
 
@@ -866,7 +887,7 @@
   <div class="container">
     <div>
       <div class="footer-signature">Μιχαήλ Μπούμπας</div>
-      <div class="footer-role">Web Developer & Digital Specialist</div>
+      <div class="footer-role">ΑΙ Web Developer & Digital Specialist</div>
       <div class="footer-brands">Neo Agency · myMetsovo · &amp; συνεργασίες</div>
     </div>
     <div class="footer-contact">
