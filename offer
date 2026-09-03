@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Πρόταση Συνεργασίας — Παναγιώτης Βαμβαράπης</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F1E8;
+    --cream-light: #FBF7F0;
+    --sand: #EFE4D0;
+    --terra: #B8623F;
+    --terra-dark: #8F4A2E;
+    --olive: #6B7A4E;
+    --ink: #2A2418;
+    --ink-soft: #5A4E3C;
+    --gold: #C89B4F;
+    --border: #E5D9C4;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 17px;
+  }
+
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    line-height: 1.05;
+    font-weight: 400;
+  }
+
+  h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+  }
+
+  h4 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    color: var(--ink-soft);
+  }
+
+  /* HERO */
+  .hero {
+    padding: 100px 0 80px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--terra);
+    font-weight: 500;
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .hero h1 {
+    margin-bottom: 24px;
+  }
+
+  .hero-italic {
+    font-style: italic;
+    color: var(--terra-dark);
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 40px;
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .hero-meta-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+
+  .hero-meta-value {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    color: var(--ink);
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  section:last-of-type {
+    border-bottom: none;
+  }
+
+  .section-number {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--terra);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  /* VISION SECTION */
+  .vision-quote {
+    background: var(--cream-light);
+    border-left: 3px solid var(--terra);
+    padding: 32px 40px;
+    margin: 32px 0;
+    font-family: 'Fraunces', serif;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--ink);
+    font-style: italic;
+  }
+
+  /* DELIVERABLES */
+  .deliverable {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .deliverable:last-child {
+    border-bottom: none;
+  }
+
+  .deliverable-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  .deliverable-icon {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--terra);
+    font-size: 1.1rem;
+    min-width: 24px;
+  }
+
+  .deliverable ul {
+    list-style: none;
+    margin-top: 12px;
+    padding-left: 40px;
+  }
+
+  .deliverable ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+  }
+
+  .deliverable ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 8px;
+    height: 1px;
+    background: var(--terra);
+  }
+
+  /* TIMELINE */
+  .timeline {
+    margin-top: 32px;
+  }
+
+  .timeline-week {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .timeline-week:last-child {
+    border-bottom: none;
+  }
+
+  .timeline-label {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--terra);
+    font-size: 1.1rem;
+  }
+
+  .timeline-content h4 {
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+
+  .timeline-content p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  /* INVESTMENT */
+  .investment-card {
+    background: var(--cream-light);
+    border: 1px solid var(--border);
+    padding: 40px;
+    margin-top: 32px;
+    border-radius: 4px;
+  }
+
+  .investment-card + .investment-card {
+    margin-top: 24px;
+  }
+
+  .investment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .investment-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    color: var(--ink);
+  }
+
+  .investment-price {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    color: var(--terra-dark);
+    font-weight: 500;
+  }
+
+  .investment-price-chf {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    font-weight: 400;
+    margin-top: 4px;
+    text-align: right;
+  }
+
+  .investment-desc {
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+  }
+
+  .installments {
+    background: var(--cream);
+    padding: 24px;
+    border-radius: 4px;
+    margin-top: 20px;
+  }
+
+  .installments-title {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--terra);
+    margin-bottom: 12px;
+    font-size: 1rem;
+  }
+
+  .installment-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--border);
+    font-size: 0.95rem;
+  }
+
+  .installment-row:last-child {
+    border-bottom: none;
+  }
+
+  .installment-when {
+    color: var(--ink-soft);
+  }
+
+  .installment-amount {
+    font-family: 'Fraunces', serif;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* MAINTENANCE INCLUDED LIST */
+  .included-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 12px;
+  }
+
+  .included-list li {
+    padding: 8px 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .included-list li::before {
+    content: '✓';
+    color: var(--olive);
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  /* NOT INCLUDED */
+  .not-included {
+    background: var(--sand);
+    padding: 32px 40px;
+    border-radius: 4px;
+    margin-top: 24px;
+  }
+
+  .not-included h3 {
+    color: var(--terra-dark);
+    font-style: italic;
+    margin-bottom: 16px;
+  }
+
+  .not-included ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .not-included ul li {
+    padding: 6px 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .not-included ul li::before {
+    content: '—';
+    color: var(--terra);
+    flex-shrink: 0;
+  }
+
+  /* NEXT STEPS */
+  .next-steps {
+    background: linear-gradient(135deg, var(--terra) 0%, var(--terra-dark) 100%);
+    color: var(--cream-light);
+    padding: 60px 40px;
+    border-radius: 4px;
+    margin-top: 32px;
+    text-align: center;
+  }
+
+  .next-steps h3 {
+    color: var(--cream-light);
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+
+  .next-steps p {
+    color: rgba(251, 247, 240, 0.9);
+    max-width: 500px;
+    margin: 0 auto 32px;
+  }
+
+  .steps-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+    text-align: left;
+  }
+
+  .step-item {
+    padding: 20px;
+    background: rgba(251, 247, 240, 0.08);
+    border-radius: 4px;
+    border: 1px solid rgba(251, 247, 240, 0.15);
+  }
+
+  .step-number {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--cream-light);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .step-item p {
+    color: rgba(251, 247, 240, 0.9);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 60px 0 40px;
+    margin-top: 0;
+  }
+
+  footer .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .footer-signature {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    color: var(--cream);
+    margin-bottom: 8px;
+  }
+
+  .footer-role {
+    font-size: 0.9rem;
+    color: rgba(247, 241, 232, 0.7);
+    margin-bottom: 16px;
+  }
+
+  .footer-brands {
+    font-size: 0.85rem;
+    color: rgba(247, 241, 232, 0.6);
+    font-style: italic;
+  }
+
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 0.9rem;
+  }
+
+  .footer-contact a {
+    color: var(--cream);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(247, 241, 232, 0.3);
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+    width: fit-content;
+  }
+
+  .footer-contact a:hover {
+    border-color: var(--gold);
+  }
+
+  .footer-bottom {
+    max-width: 820px;
+    margin: 48px auto 0;
+    padding: 24px 32px 0;
+    border-top: 1px solid rgba(247, 241, 232, 0.15);
+    font-size: 0.8rem;
+    color: rgba(247, 241, 232, 0.5);
+    text-align: center;
+  }
+
+  /* MOBILE */
+  @media (max-width: 640px) {
+    .container {
+      padding: 0 20px;
+    }
+    .hero {
+      padding: 60px 0 48px;
+    }
+    section {
+      padding: 60px 0;
+    }
+    .hero-meta {
+      gap: 24px;
+    }
+    .investment-card, .not-included, .next-steps {
+      padding: 28px 24px;
+    }
+    .timeline-week {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .steps-list {
+      grid-template-columns: 1fr;
+    }
+    footer .container {
+      grid-template-columns: 1fr;
+    }
+    .deliverable ul {
+      padding-left: 0;
+    }
+    .investment-price {
+      font-size: 1.7rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <span class="hero-eyebrow">Πρόταση Συνεργασίας · Σεπτέμβριος 2026</span>
+    <h1>
+      Ένας ψηφιακός κόμβος για τις ιστορίες,<br>
+      <span class="hero-italic">τα ταξίδια και τα βιβλία σου.</span>
+    </h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Για</span>
+        <span class="hero-meta-value">Παναγιώτης Βαμβαράπης</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Έργο</span>
+        <span class="hero-meta-value">Εκπαιδευτικό Blog · Πολύγλωσσο Site</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Από</span>
+        <span class="hero-meta-value">Μιχάλης Μπούμπας</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section>
+  <div class="container">
+    <span class="section-number">— 01</span>
+    <h2>Το όραμά σου, όπως το άκουσα</h2>
+    <p>
+      Ξεκίνησες γράφοντας ιστορίες για τα παιδιά σου. Χωρίς να το σχεδιάσεις, αυτό εξελίχθηκε σε κάτι μεγαλύτερο — ένα εκπαιδευτικό blog που μιλάει σε οικογένειες, με ιστορίες γύρω από ταξίδια, τεχνολογία και περιβάλλον. Παράλληλα, γράφεις παιδικά βιβλία σε στίχους, με το πρώτο («Το Σκουπιδό-εργοστάσιο») να ετοιμάζεται για κυκλοφορία τον Μάρτιο του 2027.
+    </p>
+    <div class="vision-quote">
+      «Πήγα να το κάνω μόνος μου και έφαγα τα μούτρα μου.»
+    </div>
+    <p>
+      Αυτή είναι η φράση-κλειδί. Δεν σου λείπει το όραμα ή το περιεχόμενο — έχεις ήδη 15-20 ιστορίες γραμμένες. Αυτό που σου λείπει είναι <strong>χρόνος και τεχνική εξειδίκευση</strong> για να χτίσεις κάτι που να στέκει επαγγελματικά και να μπορείς να το διαχειρίζεσαι μόνος σου.
+    </p>
+    <p>
+      Και αυτό ακριβώς πάμε να λύσουμε.
+    </p>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section>
+  <div class="container">
+    <span class="section-number">— 02</span>
+    <h2>Η λύση που προτείνω</h2>
+    <p>
+      Ένα <strong>πολύγλωσσο site</strong> που θα λειτουργεί ως ο κεντρικός κόμβος όλης της δουλειάς σου — το blog, τα βιβλία, τα ταξίδια, η γκάλερι. Χτισμένο σε σύγχρονη πλατφόρμα (Lovable), με ένα απλό admin panel που θα σου επιτρέπει να ανεβάζεις μόνος σου νέες ιστορίες, χωρίς να χρειάζεσαι εμένα για κάθε αλλαγή.
+    </p>
+    <p>
+      Το site θα υποστηρίζει <strong>τέσσερις γλώσσες</strong> (Ελληνικά, Αγγλικά, Γαλλικά, Γερμανικά) — για το UI και τη δομή. Για τη μετάφραση των άρθρων, θα σου δείξω πώς να χρησιμοποιείς AI εργαλεία (Claude, Gemini) ώστε να ανεβάζεις το ίδιο άρθρο και στις 4 γλώσσες σε λίγα λεπτά.
+    </p>
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section>
+  <div class="container">
+    <span class="section-number">— 03</span>
+    <h2>Τι θα φτιάξουμε</h2>
+
+    <div class="deliverable">
+      <div class="deliverable-header">
+        <span class="deliverable-icon">i.</span>
+        <h3>Πολύγλωσσο Website</h3>
+      </div>
+      <p>Custom build πάνω σε ισχυρή βάση Lovable, σχεδιασμένο για το δικό σου κοινό και τη φωνή σου.</p>
+      <ul>
+        <li>Homepage — εισαγωγή στον κόσμο του blog</li>
+        <li>Blog με αρχείο ιστοριών και κατηγορίες</li>
+        <li>Ενότητα «Τα Βιβλία μας» με χώρο για μελλοντικές κυκλοφορίες</li>
+        <li>Gallery για φωτογραφίες από ταξίδια & δραστηριότητες</li>
+        <li>Σελίδα «Ποιοι Είμαστε»</li>
+        <li>Ενσωμάτωση Facebook, Instagram, TikTok</li>
+        <li>Responsive σε κινητά, tablet, desktop</li>
+        <li>Language switcher (EL · EN · FR · DE)</li>
+      </ul>
+    </div>
+
+    <div class="deliverable">
+      <div class="deliverable-header">
+        <span class="deliverable-icon">ii.</span>
+        <h3>Διαδραστικός Χάρτης (Mapbox)</h3>
+      </div>
+      <p>Ο χάρτης που ξεχωρίζει το site από ένα απλό blog — για να δείξεις οπτικά όλες τις τοποθεσίες που έχεις επισκεφθεί με την οικογένεια.</p>
+      <ul>
+        <li>Integration με Mapbox (όπως στο myMetsovo)</li>
+        <li>Admin panel για να προσθέτεις νέες τοποθεσίες με γεωγραφικές συντεταγμένες</li>
+        <li>Custom pins με πληροφορίες κάθε επίσκεψης</li>
+      </ul>
+    </div>
+
+    <div class="deliverable">
+      <div class="deliverable-header">
+        <span class="deliverable-icon">iii.</span>
+        <h3>Admin Panel για Αυτόνομη Διαχείριση</h3>
+      </div>
+      <p>Το κλειδί για να μη με χρειάζεσαι για κάθε μικρή αλλαγή. Απλό, καθαρό, φτιαγμένο για μη τεχνικούς.</p>
+      <ul>
+        <li>Δημοσίευση νέου άρθρου σε 4 γλώσσες με tabs</li>
+        <li>Ανέβασμα φωτογραφιών με drag-and-drop</li>
+        <li>Διαχείριση τοποθεσιών στον χάρτη</li>
+        <li>Ενημέρωση περιεχομένου σε βασικές σελίδες</li>
+        <li>Secure login μόνο για εσένα</li>
+      </ul>
+    </div>
+
+    <div class="deliverable">
+      <div class="deliverable-header">
+        <span class="deliverable-icon">iv.</span>
+        <h3>Brand Identity</h3>
+      </div>
+      <p>Επειδή δεν έχεις ήδη λογότυπο ή χρωματική παλέτα, θα χτίσουμε μια ταυτότητα από την αρχή που να αντικατοπτρίζει τον χαρακτήρα του blog σου.</p>
+      <ul>
+        <li>Σχεδιασμός λογότυπου (2-3 concepts, 2 γύροι revisions)</li>
+        <li>Παλέτα χρωμάτων</li>
+        <li>Επιλογή τυπογραφίας</li>
+        <li>Basic brand guidelines σε PDF (1-2 σελίδες)</li>
+      </ul>
+    </div>
+
+    <div class="deliverable">
+      <div class="deliverable-header">
+        <span class="deliverable-icon">v.</span>
+        <h3>Analytics & SEO Foundation</h3>
+      </div>
+      <p>Ώστε από την πρώτη μέρα να έχεις πραγματικά δεδομένα για το ποιος μπαίνει, από πού, τι διαβάζει και σε ποια γλώσσα.</p>
+      <ul>
+        <li>Google Analytics 4 setup με custom events (γλώσσα, clicks στο Amazon, scroll depth)</li>
+        <li>Google Search Console για SEO monitoring & Google indexing</li>
+        <li>Σύνδεση GA4 ↔ Search Console</li>
+        <li>Sitemap submission για γρήγορη ανακάλυψη από Google</li>
+        <li>Cookie consent banner (GDPR compliant — απαραίτητο για Ευρώπη)</li>
+        <li>Παράδοση credentials στο δικό σου Google account</li>
+      </ul>
+    </div>
+
+    <div class="deliverable">
+      <div class="deliverable-header">
+        <span class="deliverable-icon">vi.</span>
+        <h3>Εκπαίδευση & Πρώτο Περιεχόμενο</h3>
+      </div>
+      <p>Για να αφήσω το site στα χέρια σου με σιγουριά, όχι με ερωτηματικά.</p>
+      <ul>
+        <li>Video tutorial για το admin panel (async, θα το ξαναδείς όσες φορές θες)</li>
+        <li>1 live training call για ερωτήσεις σε πραγματικό χρόνο</li>
+        <li>Ανέβασμα των 2-3 πρώτων άρθρων μαζί</li>
+        <li>Οδηγός για μεταφράσεις με AI (Claude / Gemini)</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section>
+  <div class="container">
+    <span class="section-number">— 04</span>
+    <h2>Χρονοδιάγραμμα</h2>
+    <p>
+      Στο call είχα αναφέρει 2 εβδομάδες. Μετά από πιο προσεκτική ανάλυση του scope, <strong>το ρεαλιστικό χρονοδιάγραμμα είναι 4 εβδομάδες</strong> από τη στιγμή που θα έχεις συμπληρώσει το brief που θα σου στείλω. Προτιμώ να σου παραδώσω κάτι ολοκληρωμένο, παρά να τρέξουμε και να μείνει μισοτελειωμένο.
+    </p>
+
+    <div class="timeline">
+      <div class="timeline-week">
+        <span class="timeline-label">Εβδομάδα 1</span>
+        <div class="timeline-content">
+          <h4>Brand & Wireframes</h4>
+          <p>Σχεδιασμός λογότυπου, χρωμάτων, τυπογραφίας. Δομή σελίδων. Πρώτη παρουσίαση στο τέλος της εβδομάδας.</p>
+        </div>
+      </div>
+      <div class="timeline-week">
+        <span class="timeline-label">Εβδομάδα 2</span>
+        <div class="timeline-content">
+          <h4>Χτίσιμο Site</h4>
+          <p>Homepage, blog structure, βιβλία, gallery, «Ποιοι Είμαστε». Setup 4 γλωσσών.</p>
+        </div>
+      </div>
+      <div class="timeline-week">
+        <span class="timeline-label">Εβδομάδα 3</span>
+        <div class="timeline-content">
+          <h4>Χάρτης, Admin Panel & Analytics</h4>
+          <p>Mapbox integration, admin panel για ανέβασμα περιεχομένου, GA4 + Search Console setup, GDPR compliance.</p>
+        </div>
+      </div>
+      <div class="timeline-week">
+        <span class="timeline-label">Εβδομάδα 4</span>
+        <div class="timeline-content">
+          <h4>Content, Εκπαίδευση & Launch</h4>
+          <p>Ανέβασμα 2-3 πρώτων άρθρων, video tutorial, live training call, final QA, go live.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTMENT -->
+<section>
+  <div class="container">
+    <span class="section-number">— 05</span>
+    <h2>Επένδυση</h2>
+    <p>
+      Δύο κομμάτια: εφάπαξ κόστος για την κατασκευή, και μηνιαία συνδρομή για τη συντήρηση μετά την παράδοση.
+    </p>
+
+    <div class="investment-card">
+      <div class="investment-header">
+        <div>
+          <div class="investment-title">Κατασκευή Website & Brand</div>
+          <p class="investment-desc" style="margin: 4px 0 0;">Εφάπαξ κόστος για όλα τα deliverables παραπάνω</p>
+        </div>
+        <div style="text-align: right;">
+          <span class="investment-price">1.900€</span>
+          <span class="investment-price-chf">≈ 1.785 CHF</span>
+        </div>
+      </div>
+
+      <div class="installments">
+        <div class="installments-title">Πληρωμή σε 3 δόσεις, συνδεδεμένες με milestones</div>
+        <div class="installment-row">
+          <div class="installment-when">Με την υπογραφή της συμφωνίας</div>
+          <div class="installment-amount">650€</div>
+        </div>
+        <div class="installment-row">
+          <div class="installment-when">Παρουσίαση brand + wireframes (εβδομάδα 2)</div>
+          <div class="installment-amount">650€</div>
+        </div>
+        <div class="installment-row">
+          <div class="installment-when">Go-live του site (εβδομάδα 4)</div>
+          <div class="installment-amount">600€</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="investment-card">
+      <div class="investment-header">
+        <div>
+          <div class="investment-title">Συντήρηση & Υποστήριξη</div>
+          <p class="investment-desc" style="margin: 4px 0 0;">Μηνιαία συνδρομή, ξεκινά με το go-live</p>
+        </div>
+        <div style="text-align: right;">
+          <span class="investment-price">15€<span style="font-size: 0.9rem; font-weight: 400; color: var(--ink-soft);">/μήνα</span></span>
+          <span class="investment-price-chf">≈ 14 CHF/μήνα</span>
+        </div>
+      </div>
+
+      <ul class="included-list">
+        <li>Lovable hosting & database</li>
+        <li>GitHub backup — για να μη χαθεί ποτέ τίποτα</li>
+        <li>Security updates & bug fixes</li>
+        <li>1 ώρα support / μήνα για μικρές αλλαγές ή απορίες</li>
+        <li>Έξτρα ώρες αν χρειαστούν: 30€ / ώρα</li>
+      </ul>
+
+      <p style="margin-top: 20px; font-size: 0.9rem; color: var(--ink-soft); font-style: italic;">
+        Ελάχιστη δέσμευση: 12 μήνες. Domain, email account και Mapbox subscription παραμένουν στο δικό σου όνομα και τα πληρώνεις εσύ απευθείας στους παρόχους.
+      </p>
+    </div>
+
+    <div class="not-included">
+      <h3>Τι δεν περιλαμβάνεται</h3>
+      <ul>
+        <li>Δημιουργία περιεχομένου (άρθρα, φωτογραφίες)</li>
+        <li>Μεταφράσεις άρθρων — τις κάνεις με AI εργαλεία με τη ροή που θα σου δείξω</li>
+        <li>Domain, email hosting, Mapbox subscription (κόστη που πληρώνεις εσύ)</li>
+        <li>Promo reel — παραμένει εκτός scope, όπως συμφωνήσαμε</li>
+        <li>Amazon integration για τα βιβλία — προτείνω να το προσθέσουμε τον Μάρτιο 2027, όταν κυκλοφορεί το πρώτο βιβλίο (add-on ~250€)</li>
+        <li>Νέες σελίδες ή features μετά την παράδοση (χρεώνονται από support hours ή extra quote)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section>
+  <div class="container">
+    <span class="section-number">— 06</span>
+    <h2>Επόμενα Βήματα</h2>
+
+    <div class="next-steps">
+      <h3>Αν όλα καλά, πάμε έτσι:</h3>
+      <p>Τρία απλά βήματα για να ξεκινήσουμε.</p>
+
+      <div class="steps-list">
+        <div class="step-item">
+          <span class="step-number">i.</span>
+          <h4 style="color: var(--cream-light); margin-bottom: 8px;">Επιβεβαίωση</h4>
+          <p>Απαντάς στο email και επιβεβαιώνεις ότι προχωράμε.</p>
+        </div>
+        <div class="step-item">
+          <span class="step-number">ii.</span>
+          <h4 style="color: var(--cream-light); margin-bottom: 8px;">Brief</h4>
+          <p>Σου στέλνω ένα Google Doc με ερωτήσεις για να αποσαφηνίσουμε λεπτομέρειες.</p>
+        </div>
+        <div class="step-item">
+          <span class="step-number">iii.</span>
+          <h4 style="color: var(--cream-light); margin-bottom: 8px;">Kickoff</h4>
+          <p>Με την πρώτη δόση, ξεκινάμε την επόμενη εβδομάδα.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div>
+      <div class="footer-signature">Μιχάλης Μπούμπας</div>
+      <div class="footer-role">Web Developer & Digital Specialist</div>
+      <div class="footer-brands">Neo Agency · myMetsovo · &amp; συνεργασίες</div>
+    </div>
+    <div class="footer-contact">
+      <a href="mailto:weareneoagency@gmail.com">weareneoagency@gmail.com</a>
+      <a href="tel:+306945877234">+30 694 587 7234</a>
+      <a href="https://www.linkedin.com/in/michael-boumpas/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    Πρόταση συνεργασίας · Σεπτέμβριος 2026 · Η προσφορά ισχύει για 30 ημέρες από την ημερομηνία αποστολής.
+  </div>
+</footer>
+
+</body>
+</html>
